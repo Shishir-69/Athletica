@@ -1,9 +1,15 @@
 import express from 'express';
 import authRoutes from './routes/authRoutes.js';
+import studentProfileRoutes from './routes/studentProfileRoutes.js';
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:5173', 'http://127.0.0.1:5173'];
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:5174',
+  'http://127.0.0.1:5174'
+];
 
 app.use((req, res, next) => {
   const origin = req.headers.origin;
@@ -23,6 +29,8 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
+app.use('/api/student/profile', studentProfileRoutes);
+app.use('/api/student', studentProfileRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({
