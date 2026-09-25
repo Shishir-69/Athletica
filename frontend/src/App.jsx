@@ -49,7 +49,7 @@ function App() {
   if (currentPage === 'nutrition' && currentRole !== 'teacher') return <Nutrition {...sharedNavigation} />
   if (currentPage === 'workout' && currentRole !== 'teacher') return <WorkoutPlan {...(currentRole === 'community' ? communityNavigation : sharedNavigation)} />
 
-  return <Login onLogin={(role) => { setCurrentRole(role); setCurrentPage(role === 'teacher' ? 'teacher' : role === 'student' ? 'dashboard' : 'community-food-test') }} />
+  return <Login onLogin={(role) => { setCurrentRole(role); setCurrentPage(role === 'teacher' ? 'teacher' : role === 'student' ? 'dashboard' : 'workout') }} />
 }
 
 export default App
