@@ -2,8 +2,8 @@ import React from "react";
 
 import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
-import WelcomeBanner from "../components/WelcomeBanner";
-import StatCards from "../components/StatCards";
+import WelcomeBanner from "../components/Welcomebanner";
+import StatCards from "../components/Statcards";
 import WorkoutCard from "../components/WorkoutCard";
 import QuickActions from "../components/QuickActions";
 
