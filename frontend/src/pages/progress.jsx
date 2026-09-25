@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./progress.css";
 
-function Progress({ onWorkoutPlan, onNutrition, onWellness }) {
+function Progress({ onWorkoutPlan, onNutrition, onWellness, onTalent }) {
   const [activePeriod, setActivePeriod] = useState("Week");
 
   const progressData = {
@@ -129,10 +129,10 @@ function Progress({ onWorkoutPlan, onNutrition, onWellness }) {
             <span>Progress</span>
           </a>
 
-          <a href="#" className="progress-nav-item">
+          <button type="button" onClick={onTalent} className="progress-nav-item">
             <span className="nav-icon">♟</span>
             <span>Talent Discovery</span>
-          </a>
+          </button>
 
           <a href="#" className="progress-nav-item">
             <span className="nav-icon">✧</span>

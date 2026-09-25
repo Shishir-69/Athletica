@@ -25,7 +25,7 @@ function WellnessMetric({ icon, title, value, subtitle, type }) {
   );
 }
 
-export default function Wellness({ onWorkoutPlan, onNutrition, onProgress }) {
+export default function Wellness({ onWorkoutPlan, onNutrition, onProgress, onTalent }) {
   const [water, setWater] = useState("");
   const [sleep, setSleep] = useState("");
   const [meditation, setMeditation] = useState("");
@@ -94,6 +94,7 @@ export default function Wellness({ onWorkoutPlan, onNutrition, onProgress }) {
           <SidebarItem
             icon="✦"
             text="Talent Discovery"
+            onClick={onTalent}
           />
 
           <SidebarItem
