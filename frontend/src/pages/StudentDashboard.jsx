@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import StatCard from "../components/StatCard";
-import ProgressChart from "../components/ProgressChart";
+import ProgressChart from "../components/progresschart";
 
 function StudentDashboard() {
 
