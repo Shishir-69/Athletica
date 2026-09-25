@@ -87,7 +87,7 @@ function WorkoutCard({ workout, onStart }) {
   );
 }
 
-export default function WorkoutPlan() {
+export default function WorkoutPlan({ onNutrition, onWellness }) {
   const [activeTab, setActiveTab] = useState("Weekly Plan");
 
   const handleStart = (workout) => {
@@ -114,8 +114,8 @@ export default function WorkoutPlan() {
             text="Workout Plan"
             active
           />
-          <SidebarItem icon="▤" text="Nutrition" />
-          <SidebarItem icon="♡" text="Wellness" />
+          <SidebarItem icon="▤" text="Nutrition" onClick={onNutrition} />
+          <SidebarItem icon="♡" text="Wellness" onClick={onWellness} />
           <SidebarItem icon="◔" text="Progress" />
           <SidebarItem icon="✦" text="Talent Discovery" />
           <SidebarItem icon="♛" text="Gamification" />

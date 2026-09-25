@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import "./Nutrition.css";
 
 const mealData = [
@@ -44,9 +45,9 @@ const mealData = [
   },
 ];
 
-function SidebarItem({ icon, text, active }) {
+function SidebarItem({ icon, text, active, onClick }) {
   return (
-    <button className={`sidebar-item ${active ? "active" : ""}`}>
+    <button className={`sidebar-item ${active ? "active" : ""}`} onClick={onClick}>
       <span className="sidebar-icon">{icon}</span>
       <span>{text}</span>
     </button>
@@ -78,7 +79,7 @@ function MealCard({ meal }) {
   );
 }
 
-export default function Nutrition() {
+export default function Nutrition({ onWorkoutPlan, onWellness }) {
   const [activeTab, setActiveTab] = useState("Today's Plan");
 
   return (
@@ -99,7 +100,7 @@ export default function Nutrition() {
 
           <SidebarItem icon="◉" text="Assessment" />
 
-          <SidebarItem icon="▣" text="Workout Plan" />
+          <SidebarItem icon="▣" text="Workout Plan" onClick={onWorkoutPlan} />
 
           <SidebarItem
             icon="▤"
@@ -107,7 +108,7 @@ export default function Nutrition() {
             active
           />
 
-          <SidebarItem icon="♡" text="Wellness" />
+          <SidebarItem icon="♡" text="Wellness" onClick={onWellness} />
 
           <SidebarItem icon="◔" text="Progress" />
 
@@ -178,7 +179,7 @@ export default function Nutrition() {
 
             <div className="summary-text">
               <span className="summary-label">
-                Today's Nutrition
+                Today&apos;s Nutrition
               </span>
 
               <h2>1,600 kcal</h2>
@@ -212,7 +213,7 @@ export default function Nutrition() {
               }
               onClick={() => setActiveTab("Today's Plan")}
             >
-              Today's Plan
+              Today&apos;s Plan
             </button>
 
             <button
