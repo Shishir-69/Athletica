@@ -24,7 +24,7 @@ function BrandMark() {
   return <div className="login-brand-mark" aria-hidden="true">A<span>+</span></div>
 }
 
-export default function Login() {
+export default function Login({ onLogin }) {
   const [role, setRole] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [feedback, setFeedback] = useState('')
@@ -35,7 +35,7 @@ export default function Login() {
       setFeedback('Please choose your role before signing in.')
       return
     }
-    setFeedback('Sign in is ready to connect when authentication is enabled.')
+    onLogin()
   }
 
   return <main className="login-page">
