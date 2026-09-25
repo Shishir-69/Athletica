@@ -7,11 +7,13 @@ import Progress from './pages/progress.jsx'
 import TalentDiscovery from './pages/talent_discovery.jsx'
 import Gamification from './pages/gamification.jsx'
 import TeacherDashboard from './pages/teacher_dashboard.jsx'
+import Dashboard from './pages/dashboard.jsx'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('login')
   const goTo = (page) => () => setCurrentPage(page)
 
+  if (currentPage === 'dashboard') return <Dashboard onWorkoutPlan={goTo('workout')} onNutrition={goTo('nutrition')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onTalent={goTo('talent')} onGamification={goTo('gamification')} />
   if (currentPage === 'teacher') return <TeacherDashboard onWorkoutPlan={goTo('workout')} onNutrition={goTo('nutrition')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onTalent={goTo('talent')} onGamification={goTo('gamification')} />
   if (currentPage === 'gamification') return <Gamification onWorkoutPlan={goTo('workout')} onNutrition={goTo('nutrition')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onTalent={goTo('talent')} />
   if (currentPage === 'talent') return <TalentDiscovery onWorkoutPlan={goTo('workout')} onNutrition={goTo('nutrition')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onGamification={goTo('gamification')} />
@@ -20,7 +22,7 @@ function App() {
   if (currentPage === 'nutrition') return <Nutrition onWorkoutPlan={goTo('workout')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onTalent={goTo('talent')} onGamification={goTo('gamification')} />
   if (currentPage === 'workout') return <WorkoutPlan onNutrition={goTo('nutrition')} onWellness={goTo('wellness')} onProgress={goTo('progress')} onTalent={goTo('talent')} onGamification={goTo('gamification')} />
 
-  return <Login onLogin={(role) => setCurrentPage(role === 'teacher' ? 'teacher' : 'workout')} />
+  return <Login onLogin={(role) => setCurrentPage(role === 'teacher' ? 'teacher' : role === 'student' ? 'dashboard' : 'workout')} />
 }
 
 export default App
