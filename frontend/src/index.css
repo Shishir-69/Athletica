@@ -66,3 +66,980 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #079b68;
+  --dark-green: #087d58;
+  --light-green: #e9f8f2;
+  --text: #17251f;
+  --muted: #7b8985;
+  --border: #e8eeeb;
+  --background: #f7faf9;
+}
+
+body {
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background: var(--background);
+  color: var(--text);
+}
+
+
+/* =================================
+   MAIN DASHBOARD
+================================= */
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+
+/* =================================
+   SIDEBAR
+================================= */
+
+.sidebar {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  width: 235px;
+
+  background: white;
+
+  border-right: 1px solid var(--border);
+
+  padding: 25px 14px;
+
+  z-index: 10;
+}
+
+
+/* LOGO */
+
+.sidebar-logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 5px 10px 28px;
+}
+
+.athletica-mark {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  color: #16a778;
+}
+
+.athletica-name {
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.athletica-subtitle {
+  font-size: 8px;
+
+  color: #94a19c;
+
+  margin-top: 2px;
+}
+
+
+/* SIDEBAR MENU */
+
+.sidebar-nav {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.sidebar-item {
+  height: 42px;
+
+  padding: 0 13px;
+
+  border-radius: 8px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  color: #6f7d78;
+
+  font-size: 12px;
+
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.sidebar-item:hover {
+  background: #f2f8f5;
+}
+
+.sidebar-item.active {
+  background: #dff6ed;
+
+  color: #078e61;
+
+  font-weight: 600;
+}
+
+.sidebar-item svg {
+  flex-shrink: 0;
+}
+
+
+/* LANGUAGE */
+
+.language {
+  position: absolute;
+
+  left: 25px;
+
+  bottom: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #75827e;
+
+  font-size: 11px;
+}
+
+
+/* =================================
+   MAIN
+================================= */
+
+.main {
+  margin-left: 235px;
+
+  width: calc(100% - 235px);
+
+  min-height: 100vh;
+}
+
+
+/* =================================
+   TOPBAR
+================================= */
+
+.topbar {
+  height: 65px;
+
+  background: white;
+
+  border-bottom: 1px solid #edf1ef;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 28px;
+}
+
+.search {
+  width: 260px;
+
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #9ba6a2;
+}
+
+.search input {
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 12px;
+
+  width: 100%;
+}
+
+.search input::placeholder {
+  color: #aab4b0;
+}
+
+.topbar-right {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.notification-button {
+  border: none;
+
+  background: transparent;
+
+  color: #5f6d68;
+
+  cursor: pointer;
+}
+
+.profile {
+  width: 28px;
+  height: 28px;
+
+  border-radius: 50%;
+
+  background: #087e5b;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+/* =================================
+   CONTENT
+================================= */
+
+.dashboard-content {
+  padding: 24px 28px 35px;
+}
+
+
+/* =================================
+   WELCOME BANNER
+================================= */
+
+.welcome-banner {
+  height: 130px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #ffffff 0%,
+      #ffffff 43%,
+      #e7f8ef 100%
+    );
+
+  border-radius: 12px;
+
+  border: 1px solid #edf2ef;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 25px 30px;
+
+  margin-bottom: 17px;
+}
+
+.welcome-text {
+  position: relative;
+
+  z-index: 3;
+}
+
+.welcome-text h1 {
+  font-size: 20px;
+
+  font-weight: 700;
+
+  margin-bottom: 8px;
+}
+
+.welcome-text p {
+  font-size: 11px;
+
+  color: #7d8985;
+}
+
+
+/* SIMPLE LANDSCAPE */
+
+.welcome-art {
+  position: absolute;
+
+  right: 0;
+
+  top: 0;
+
+  width: 53%;
+
+  height: 100%;
+}
+
+.mountain {
+  position: absolute;
+
+  bottom: -25px;
+
+  border-radius: 50% 50% 0 0;
+}
+
+.mountain-one {
+  right: 100px;
+
+  width: 260px;
+
+  height: 95px;
+
+  background: #9bdfbf;
+
+  transform: rotate(-4deg);
+}
+
+.mountain-two {
+  right: -30px;
+
+  width: 330px;
+
+  height: 75px;
+
+  background: #63c99e;
+
+  transform: rotate(3deg);
+}
+
+.sun {
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  background: #ffd66d;
+
+  top: 30px;
+
+  right: 210px;
+}
+
+.runner {
+  position: absolute;
+
+  right: 190px;
+
+  bottom: 42px;
+
+  font-size: 40px;
+}
+
+.welcome-message {
+  position: absolute;
+
+  right: 30px;
+
+  top: 50px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  color: #52716a;
+}
+
+
+/* =================================
+   STAT CARDS
+================================= */
+
+.stats-container {
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    1fr
+    1fr;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+}
+
+.stat-card {
+  min-height: 145px;
+
+  border-radius: 11px;
+
+  border: 1px solid #eaf0ed;
+
+  padding: 18px 20px;
+
+  background: white;
+}
+
+.fitness-card {
+  background: #f1fbf7;
+}
+
+.xp-card {
+  background: #f7f3ff;
+}
+
+.streak-card {
+  background: #fff9e9;
+}
+
+
+/* CARD HEADINGS */
+
+.stat-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #078b60;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+}
+
+.stat-heading.purple {
+  color: #8061bd;
+}
+
+.stat-heading.orange {
+  color: #ed8d16;
+}
+
+
+/* FITNESS SCORE */
+
+.fitness-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+.score-ring {
+  width: 82px;
+  height: 82px;
+
+  border-radius: 50%;
+
+  background:
+    conic-gradient(
+      #08a46c 0deg,
+      #08a46c 295deg,
+      #d7f1e7 295deg,
+      #d7f1e7 360deg
+    );
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  position: relative;
+}
+
+.score-ring::before {
+  content: "";
+
+  position: absolute;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 50%;
+
+  background: #f1fbf7;
+}
+
+.score-inner {
+  position: relative;
+
+  text-align: center;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.score-inner strong {
+  font-size: 22px;
+
+  line-height: 20px;
+}
+
+.score-inner small {
+  font-size: 7px;
+
+  color: #84918c;
+}
+
+.score-inner span {
+  font-size: 8px;
+
+  color: #079b68;
+
+  font-weight: 700;
+
+  margin-top: 2px;
+}
+
+.score-change {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.score-change strong {
+  color: #099663;
+
+  font-size: 12px;
+}
+
+.score-change span {
+  color: #8b9793;
+
+  font-size: 9px;
+}
+
+
+/* XP AND STREAK */
+
+.xp-card h2,
+.streak-card h2 {
+  font-size: 28px;
+
+  margin-top: 8px;
+
+  margin-bottom: 3px;
+}
+
+.xp-card p,
+.streak-card p {
+  color: #687670;
+
+  font-size: 10px;
+}
+
+.xp-today {
+  margin-top: 7px;
+
+  font-size: 10px;
+
+  color: #7b5bb8;
+}
+
+
+/* =================================
+   LOWER GRID
+================================= */
+
+.lower-grid {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 18px;
+}
+
+
+/* =================================
+   SECTION HEADINGS
+================================= */
+
+.section-heading {
+  margin-bottom: 9px;
+}
+
+.section-heading h2 {
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =================================
+   WORKOUT
+================================= */
+
+.workout-section {
+  min-width: 0;
+}
+
+.workout-card {
+  min-height: 155px;
+
+  background: white;
+
+  border: 1px solid #e8eeeb;
+
+  border-radius: 11px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 16px;
+
+  gap: 17px;
+}
+
+.workout-image {
+  width: 88px;
+  height: 88px;
+
+  border-radius: 9px;
+
+  background: #eef8f5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 45px;
+
+  flex-shrink: 0;
+}
+
+.workout-info {
+  flex: 1;
+}
+
+.workout-info h3 {
+  font-size: 14px;
+
+  margin-bottom: 8px;
+}
+
+.workout-meta {
+  display: flex;
+
+  gap: 15px;
+
+  color: #788681;
+
+  font-size: 9px;
+
+  margin-bottom: 9px;
+}
+
+.workout-meta span {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.workout-info p {
+  color: #8a9692;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  max-width: 260px;
+}
+
+.start-button {
+  border: none;
+
+  background: #079b68;
+
+  color: white;
+
+  border-radius: 7px;
+
+  padding: 10px 18px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.start-button:hover {
+  background: #07865b;
+}
+
+
+/* =================================
+   QUICK ACTIONS
+================================= */
+
+.quick-section {
+  min-width: 0;
+}
+
+.quick-actions {
+  background: white;
+
+  border: 1px solid #e8eeeb;
+
+  border-radius: 11px;
+
+  overflow: hidden;
+}
+
+.quick-action {
+  width: 100%;
+
+  height: 39px;
+
+  background: white;
+
+  border: none;
+
+  border-bottom: 1px solid #f0f3f2;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #67746f;
+
+  font-size: 10px;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.quick-action:last-child {
+  border-bottom: none;
+}
+
+.quick-action:hover {
+  background: #f7fbf9;
+}
+
+.quick-icon {
+  width: 24px;
+  height: 24px;
+
+  border-radius: 5px;
+
+  background: #edf8f4;
+
+  color: #078e61;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.quick-action span {
+  flex: 1;
+}
+
+.quick-action .arrow {
+  color: #a0aaa6;
+}
+
+
+/* =================================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1000px) {
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .main {
+    margin-left: 200px;
+
+    width: calc(100% - 200px);
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fitness-card {
+    grid-column: span 2;
+  }
+
+  .lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .sidebar {
+    width: 70px;
+
+    padding: 20px 8px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+
+    padding: 5px 0 25px;
+  }
+
+  .athletica-name,
+  .athletica-subtitle,
+  .sidebar-item span,
+  .language span {
+    display: none;
+  }
+
+  .sidebar-item {
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .language {
+    left: 26px;
+  }
+
+  .main {
+    margin-left: 70px;
+
+    width: calc(100% - 70px);
+  }
+
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .topbar {
+    padding: 0 15px;
+  }
+
+  .search {
+    width: 150px;
+  }
+
+  .welcome-banner {
+    height: 145px;
+
+    padding: 20px;
+  }
+
+  .welcome-art {
+    opacity: 0.4;
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .fitness-card {
+    grid-column: auto;
+  }
+
+  .workout-card {
+    flex-wrap: wrap;
+  }
+
+  .start-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .welcome-text h1 {
+    font-size: 17px;
+  }
+
+  .welcome-text p {
+    font-size: 9px;
+  }
+
+  .fitness-content {
+    gap: 12px;
+  }
+
+  .workout-image {
+    width: 70px;
+    height: 70px;
+  }
+
+}

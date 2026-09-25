@@ -39,7 +39,11 @@ import React from "react";
 import StudentDashboard from "./pages/StudentDashboard";
 
 function App() {
-  return <StudentDashboard />;
+
+  return (
+    <StudentDashboard />
+  );
+
 }
 
 export default App;

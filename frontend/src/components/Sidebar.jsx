@@ -1,46 +1,116 @@
 import React from "react";
 
+import {
+  LayoutDashboard,
+  ClipboardCheck,
+  Dumbbell,
+  Apple,
+  HeartPulse,
+  TrendingUp,
+  Trophy,
+  Gamepad2,
+  Languages
+} from "lucide-react";
+
 const menuItems = [
-  { icon: "⌂", name: "Dashboard" },
-  { icon: "◉", name: "Assessment" },
-  { icon: "🏃", name: "Workout Plan" },
-  { icon: "🍎", name: "Nutrition" },
-  { icon: "♥", name: "Wellness" },
-  { icon: "↗", name: "Progress" },
-  { icon: "★", name: "Talent Discovery" },
-  { icon: "🏆", name: "Gamification" },
+  {
+    name: "Dashboard",
+    icon: LayoutDashboard
+  },
+  {
+    name: "Assessment",
+    icon: ClipboardCheck
+  },
+  {
+    name: "Workout Plan",
+    icon: Dumbbell
+  },
+  {
+    name: "Nutrition",
+    icon: Apple
+  },
+  {
+    name: "Wellness",
+    icon: HeartPulse
+  },
+  {
+    name: "Progress",
+    icon: TrendingUp
+  },
+  {
+    name: "Talent Discovery",
+    icon: Trophy
+  },
+  {
+    name: "Gamification",
+    icon: Gamepad2
+  }
 ];
 
 function Sidebar() {
   return (
     <aside className="sidebar">
 
-      <div className="brand">
-        <div className="brand-logo">A</div>
+      {/* LOGO */}
+      <div className="sidebar-logo">
+
+        <div className="athletica-mark">
+          A
+        </div>
 
         <div>
-          <h2>ATHLETICA</h2>
-          <span>Fitness & Wellness</span>
+          <div className="athletica-name">
+            ATHLETICA
+          </div>
+
+          <div className="athletica-subtitle">
+            Fitness & Wellness
+          </div>
         </div>
+
       </div>
 
-      <nav className="sidebar-menu">
 
-        {menuItems.map((item, index) => (
-          <div
-            key={item.name}
-            className={`menu-item ${index === 0 ? "active" : ""}`}
-          >
-            <span className="menu-icon">{item.icon}</span>
-            <span>{item.name}</span>
-          </div>
-        ))}
+      {/* MENU */}
+      <nav className="sidebar-nav">
+
+        {menuItems.map((item, index) => {
+
+          const Icon = item.icon;
+
+          return (
+            <div
+              className={
+                index === 0
+                  ? "sidebar-item active"
+                  : "sidebar-item"
+              }
+              key={item.name}
+            >
+
+              <Icon size={17} strokeWidth={2} />
+
+              <span>
+                {item.name}
+              </span>
+
+            </div>
+          );
+
+        })}
 
       </nav>
 
-      <div className="sidebar-bottom">
-        <span>🌐</span>
-        <span>English</span>
+
+      {/* LANGUAGE */}
+      <div className="language">
+
+        <Languages size={16} />
+
+        <span>
+          English
+        </span>
+
       </div>
 
     </aside>
