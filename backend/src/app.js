@@ -1,6 +1,8 @@
 import express from 'express';
 import authRoutes from './routes/authRoutes.js';
 import studentProfileRoutes from './routes/studentProfileRoutes.js';
+import fitnessAssessmentRoutes from './routes/fitnessAssessmentRoutes.js';
+import workoutPlanRoutes from './routes/workoutPlanRoutes.js';
 
 const app = express();
 
@@ -30,7 +32,11 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use('/api/student/profile', studentProfileRoutes);
+app.use('/api/student/assessment', fitnessAssessmentRoutes);
+app.use('/api/student/workout-plan', workoutPlanRoutes);
 app.use('/api/student', studentProfileRoutes);
+app.use('/api/student', fitnessAssessmentRoutes);
+app.use('/api/student', workoutPlanRoutes);
 
 app.get('/api/health', (req, res) => {
   res.json({

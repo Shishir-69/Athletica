@@ -5,6 +5,9 @@ import WorkoutPlan from './pages/workout_plan.jsx'
 import Nutrition from './pages/Nutrition.jsx'
 import Wellness from './pages/Wellness.jsx'
 import Progress from './pages/progress.jsx'
+import TeacherDashboard from './pages/teacher_dashboard.jsx'
+import Gamification from './pages/gamification.jsx'
+import TalentDiscovery from './pages/talent_discovery.jsx'
 
 function App() {
   const [user, setUser] = useState(() => {
@@ -34,15 +37,19 @@ function App() {
     return <Login onLogin={handleLogin} />
   }
 
-  // Role: Student -> Navigates to existing Student Dashboard & student feature pages
+  const goTo = (page) => () => setCurrentPage(page)
+
+  // Role: Student
   if (user.role === 'student') {
     if (currentPage === 'workout') {
       return (
         <WorkoutPlan
-          onNutrition={() => setCurrentPage('nutrition')}
-          onWellness={() => setCurrentPage('wellness')}
-          onProgress={() => setCurrentPage('progress')}
-          onDashboard={() => setCurrentPage('dashboard')}
+          onNutrition={goTo('nutrition')}
+          onWellness={goTo('wellness')}
+          onProgress={goTo('progress')}
+          onDashboard={goTo('dashboard')}
+          onTalent={goTo('talent')}
+          onGamification={goTo('gamification')}
         />
       )
     }
@@ -50,10 +57,12 @@ function App() {
     if (currentPage === 'nutrition') {
       return (
         <Nutrition
-          onWorkoutPlan={() => setCurrentPage('workout')}
-          onWellness={() => setCurrentPage('wellness')}
-          onProgress={() => setCurrentPage('progress')}
-          onDashboard={() => setCurrentPage('dashboard')}
+          onWorkoutPlan={goTo('workout')}
+          onWellness={goTo('wellness')}
+          onProgress={goTo('progress')}
+          onDashboard={goTo('dashboard')}
+          onTalent={goTo('talent')}
+          onGamification={goTo('gamification')}
         />
       )
     }
@@ -61,10 +70,12 @@ function App() {
     if (currentPage === 'wellness') {
       return (
         <Wellness
-          onWorkoutPlan={() => setCurrentPage('workout')}
-          onNutrition={() => setCurrentPage('nutrition')}
-          onProgress={() => setCurrentPage('progress')}
-          onDashboard={() => setCurrentPage('dashboard')}
+          onWorkoutPlan={goTo('workout')}
+          onNutrition={goTo('nutrition')}
+          onProgress={goTo('progress')}
+          onDashboard={goTo('dashboard')}
+          onTalent={goTo('talent')}
+          onGamification={goTo('gamification')}
         />
       )
     }
@@ -72,10 +83,38 @@ function App() {
     if (currentPage === 'progress') {
       return (
         <Progress
-          onWorkoutPlan={() => setCurrentPage('workout')}
-          onNutrition={() => setCurrentPage('nutrition')}
-          onWellness={() => setCurrentPage('wellness')}
-          onDashboard={() => setCurrentPage('dashboard')}
+          onWorkoutPlan={goTo('workout')}
+          onNutrition={goTo('nutrition')}
+          onWellness={goTo('wellness')}
+          onDashboard={goTo('dashboard')}
+          onTalent={goTo('talent')}
+          onGamification={goTo('gamification')}
+        />
+      )
+    }
+
+    if (currentPage === 'gamification') {
+      return (
+        <Gamification
+          onWorkoutPlan={goTo('workout')}
+          onNutrition={goTo('nutrition')}
+          onWellness={goTo('wellness')}
+          onProgress={goTo('progress')}
+          onTalent={goTo('talent')}
+          onDashboard={goTo('dashboard')}
+        />
+      )
+    }
+
+    if (currentPage === 'talent') {
+      return (
+        <TalentDiscovery
+          onWorkoutPlan={goTo('workout')}
+          onNutrition={goTo('nutrition')}
+          onWellness={goTo('wellness')}
+          onProgress={goTo('progress')}
+          onGamification={goTo('gamification')}
+          onDashboard={goTo('dashboard')}
         />
       )
     }
@@ -83,48 +122,33 @@ function App() {
     return (
       <StudentDashboard
         user={user}
-        onWorkoutPlan={() => setCurrentPage('workout')}
-        onNutrition={() => setCurrentPage('nutrition')}
-        onWellness={() => setCurrentPage('wellness')}
-        onProgress={() => setCurrentPage('progress')}
+        onWorkoutPlan={goTo('workout')}
+        onNutrition={goTo('nutrition')}
+        onWellness={goTo('wellness')}
+        onProgress={goTo('progress')}
+        onTalent={goTo('talent')}
+        onGamification={goTo('gamification')}
         onLogout={handleLogout}
       />
     )
   }
 
-  // Role: Teacher (no dedicated dashboard component exists yet)
+  // Role: Teacher
   if (user.role === 'teacher') {
     return (
-      <main className="login-page">
-        <section className="login-layout">
-          <header className="login-header">
-            <a className="login-brand" href="/" aria-label="Athletica home">
-              <div className="login-brand-mark">A<span>+</span></div>
-              <span>ATHLETICA</span>
-            </a>
-          </header>
-          <section className="login-card" style={{ maxWidth: '600px', margin: '40px auto' }}>
-            <p className="login-kicker"><span></span> TEACHER PORTAL</p>
-            <h2>Welcome, {user.name}!</h2>
-            <p className="card-copy">You are successfully signed in as a Teacher ({user.email}).</p>
-            <p style={{ marginTop: '1rem', color: '#666' }}>
-              Teacher &amp; Institution dashboard features will be connected in the next phase.
-            </p>
-            <button
-              className="sign-in-button"
-              style={{ marginTop: '1.5rem' }}
-              type="button"
-              onClick={handleLogout}
-            >
-              Sign Out
-            </button>
-          </section>
-        </section>
-      </main>
+      <TeacherDashboard
+        onWorkoutPlan={goTo('workout')}
+        onNutrition={goTo('nutrition')}
+        onWellness={goTo('wellness')}
+        onProgress={goTo('progress')}
+        onTalent={goTo('talent')}
+        onGamification={goTo('gamification')}
+        onLogout={handleLogout}
+      />
     )
   }
 
-  // Role: Community (no dedicated dashboard component exists yet)
+  // Role: Community
   if (user.role === 'community') {
     return (
       <main className="login-page">
@@ -160,5 +184,3 @@ function App() {
 }
 
 export default App
-
-

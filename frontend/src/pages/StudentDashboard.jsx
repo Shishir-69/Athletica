@@ -4,8 +4,8 @@ import Sidebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 import WelcomeBanner from "../components/Welcomebanner";
 import StatCards from "../components/Statcards";
-import WorkoutCard from "../components/WorkoutCard";
-import QuickActions from "../components/QuickActions";
+import WorkoutCard from "../components/Workoutcards";
+import QuickActions from "../components/Quickaction";
 
 function StudentDashboard() {
 
