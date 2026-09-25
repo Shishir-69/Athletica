@@ -28,6 +28,7 @@ const menuItems = [
   { label: "Progress", icon: Trophy },
   { label: "Talent Discovery", icon: UserRound },
   { label: "Gamification", icon: ShieldCheck },
+  { label: "Leaderboard", icon: Trophy },
 ];
 
 const quickActions = [
@@ -49,14 +50,16 @@ const quickActions = [
   },
 ];
 
-function StudentDashboard({ onWorkoutPlan, onNutrition, onWellness, onProgress, onTalent, onGamification }) {
+function StudentDashboard({ onAssessment, onWorkoutPlan, onNutrition, onWellness, onProgress, onTalent, onGamification, onLeaderboard }) {
   const navigation = {
+    Assessment: onAssessment,
     "Workout Plan": onWorkoutPlan,
     Nutrition: onNutrition,
     Wellness: onWellness,
     Progress: onProgress,
     "Talent Discovery": onTalent,
     Gamification: onGamification,
+    Leaderboard: onLeaderboard,
   };
 
   return (

@@ -1,0 +1,543 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5faf8;
+  color: #18332b;
+}
+
+.athletica-app {
+  min-height: 100vh;
+  display: flex;
+  background: #f5faf8;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+  width: 235px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e5eee9;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+  padding-left: 6px;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: #0b9f6e;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.logo p {
+  margin: 3px 0 0;
+  font-size: 7px;
+  color: #82918c;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-nav a {
+  text-decoration: none;
+  color: #66746f;
+  padding: 11px 12px;
+  border-radius: 9px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  transition: 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: #f0faf6;
+  color: #07966a;
+}
+
+.sidebar-nav a.active {
+  background: #dff7ed;
+  color: #078c63;
+  font-weight: 700;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #74827e;
+  font-size: 12px;
+  padding: 10px;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+  margin-left: 235px;
+  width: calc(100% - 235px);
+  padding: 0 35px 45px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e8efec;
+}
+
+.search-box {
+  width: 270px;
+  height: 38px;
+  background: #ffffff;
+  border: 1px solid #e5eeea;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  color: #8a9691;
+}
+
+.search-box input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 13px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notification {
+  color: #60716b;
+}
+
+.profile {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #087c61;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 22px;
+}
+
+.result-header h1 {
+  margin: 0 0 7px;
+  font-size: 28px;
+}
+
+.result-header p {
+  margin: 0;
+  color: #7b8883;
+  font-size: 13px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.icon-button {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #dfeae5;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* =========================
+   RESULT OVERVIEW
+========================= */
+
+.result-overview {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.score-card,
+.achievement-card {
+  background: white;
+  border: 1px solid #e6efeb;
+  border-radius: 16px;
+  padding: 28px;
+  min-height: 240px;
+}
+
+.score-card {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+/* Score Circle */
+
+.score-circle {
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #0b9f6e 0deg 295deg,
+    #e3eee9 295deg 360deg
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.score-inner {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score-inner span {
+  color: #7c8a85;
+  font-size: 12px;
+}
+
+.score-inner strong {
+  font-size: 42px;
+  color: #17382f;
+  line-height: 1;
+  margin-top: 5px;
+}
+
+.score-inner small {
+  color: #8a9691;
+  margin-left: 48px;
+  margin-top: -5px;
+}
+
+.score-inner b {
+  margin-top: 5px;
+  color: #079568;
+  font-size: 13px;
+}
+
+.score-description h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.score-description p {
+  color: #77857f;
+  line-height: 1.6;
+  font-size: 13px;
+  max-width: 300px;
+}
+
+/* Achievement */
+
+.achievement-card {
+  text-align: center;
+  background: #f0fbf7;
+  border-color: #d9eee6;
+}
+
+.trophy {
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.achievement-card h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.achievement-card p {
+  color: #718079;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.achievement-line {
+  border-top: 1px solid #d7e9e2;
+  margin-top: 18px;
+  padding-top: 13px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.achievement-line strong {
+  color: #078f67;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-section {
+  margin-top: 25px;
+}
+
+.stats-section h2 {
+  font-size: 18px;
+  margin: 0 0 14px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.stat-card {
+  padding: 20px;
+  border-radius: 12px;
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-card.green {
+  background: #e9f9f1;
+}
+
+.stat-card.blue {
+  background: #eef8ff;
+}
+
+.stat-card.orange {
+  background: #fff6e8;
+}
+
+.stat-card.purple {
+  background: #f5efff;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #71807a;
+  margin-bottom: 7px;
+}
+
+.stat-card strong {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+.stat-status {
+  font-size: 11px;
+  color: #078e65;
+}
+
+/* =========================
+   SUMMARY
+========================= */
+
+.recommendation-card {
+  margin-top: 24px;
+  background: white;
+  border: 1px solid #e4eee9;
+  border-radius: 13px;
+  padding: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.recommendation-icon {
+  width: 38px;
+  height: 38px;
+  background: #e6f8f0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommendation-card h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.recommendation-card p {
+  margin: 0;
+  color: #78857f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================
+   REPORT BUTTON
+========================= */
+
+.report-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #079b6c;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.report-button:hover {
+  background: #067d58;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .main-content {
+    margin-left: 190px;
+    width: calc(100% - 190px);
+    padding: 0 20px;
+  }
+
+  .score-card {
+    gap: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    min-height: auto;
+  }
+
+  .athletica-app {
+    display: block;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar-nav a {
+    white-space: nowrap;
+  }
+
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .result-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .score-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-content {
+    padding: 0 14px 30px;
+  }
+
+  .topbar {
+    height: 60px;
+  }
+
+  .search-box {
+    width: 160px;
+  }
+
+  .result-header {
+    align-items: flex-start;
+  }
+
+  .result-header h1 {
+    font-size: 23px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

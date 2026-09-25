@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./gamification.css";
 
-const Gamification = ({ onWorkoutPlan, onNutrition, onWellness, onProgress, onTalent }) => {
+const Gamification = ({ onWorkoutPlan, onNutrition, onWellness, onProgress, onTalent, onLeaderboard }) => {
   return (
     <div className="gamification-page">
 
@@ -48,6 +48,11 @@ const Gamification = ({ onWorkoutPlan, onNutrition, onWellness, onProgress, onTa
           <button type="button" className="g-nav-item active">
             <span className="g-icon">✧</span>
             <span>Gamification</span>
+          </button>
+
+          <button type="button" onClick={onLeaderboard} className="g-nav-item">
+            <span className="g-icon">♛</span>
+            <span>Leaderboard</span>
           </button>
 
         </nav>

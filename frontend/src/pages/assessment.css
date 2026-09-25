@@ -1,0 +1,840 @@
+/* =========================================
+   ATHLETICA FITNESS ASSESSMENT
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.assessment-page {
+  min-height: 100vh;
+  display: flex;
+  background: #f5faf8;
+  color: #172b2a;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.assessment-sidebar {
+  width: 230px;
+  min-height: 100vh;
+  background: #ffffff;
+  border-right: 1px solid #e7efec;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+
+/* LOGO */
+
+.assessment-logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 10px 28px;
+}
+
+.logo-symbol {
+  width: 30px;
+  height: 30px;
+  color: #08a67b;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 30px;
+}
+
+.assessment-logo h2 {
+  margin: 0;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: #17302e;
+}
+
+.assessment-logo span {
+  font-size: 8px;
+  color: #8b9c99;
+}
+
+
+/* NAVIGATION */
+
+.assessment-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nav-item {
+  border: none;
+  background: transparent;
+  width: 100%;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px;
+  border-radius: 9px;
+  color: #637572;
+  text-decoration: none;
+  font-size: 13px;
+  transition: 0.2s ease;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: #f0f8f5;
+  color: #069b75;
+}
+
+.nav-item.active {
+  background: #e5f7f1;
+  color: #059c75;
+  font-weight: 600;
+}
+
+.nav-icon {
+  width: 20px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.sidebar-language {
+  margin-top: auto;
+  padding: 12px 10px;
+  color: #7b8b88;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.language-arrow {
+  margin-left: auto;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+.assessment-main {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.assessment-topbar {
+  height: 68px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8efed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.search-box {
+  width: 250px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #8b9b98;
+}
+
+.search-box span {
+  font-size: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 13px;
+  color: #273b38;
+}
+
+.search-box input::placeholder {
+  color: #a6b3b0;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.notification-button {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  color: #526764;
+  cursor: pointer;
+}
+
+.profile-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #006b58;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CONTENT
+   ========================================= */
+
+.assessment-content {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.assessment-hero {
+  min-height: 165px;
+  background: linear-gradient(
+    100deg,
+    #f9fffd 0%,
+    #effbf7 70%,
+    #e4f7ef 100%
+  );
+
+  border-radius: 14px;
+  border: 1px solid #e6f0ed;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 28px 40px;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  margin: 0 0 8px;
+  color: #142c29;
+  font-size: 27px;
+  font-weight: 700;
+}
+
+.hero-text p {
+  margin: 0;
+  color: #738481;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.hero-illustration {
+  width: 260px;
+  height: 135px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 10px;
+  left: 75px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #0ba77d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  z-index: 3;
+}
+
+.person {
+  position: relative;
+  z-index: 2;
+  font-size: 65px;
+}
+
+.plant {
+  position: absolute;
+  font-size: 36px;
+}
+
+.plant-one {
+  right: 15px;
+  bottom: 18px;
+}
+
+.plant-two {
+  left: 15px;
+  bottom: 15px;
+}
+
+
+/* =========================================
+   STEPS
+   ========================================= */
+
+.step-container {
+  background: #ffffff;
+  border: 1px solid #e7efec;
+  border-radius: 12px;
+
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 12px 30px;
+  margin-top: 18px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #a0adaa;
+  white-space: nowrap;
+}
+
+.step.active {
+  color: #079b76;
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  background: #eef3f1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.step.active .step-number {
+  background: #078e6d;
+  color: white;
+}
+
+.step strong {
+  font-size: 12px;
+}
+
+.step-line {
+  height: 1px;
+  flex: 1;
+  margin: 0 15px;
+  background: #e1e9e6;
+}
+
+
+/* =========================================
+   FORM
+   ========================================= */
+
+.assessment-form {
+  margin-top: 20px;
+}
+
+.form-section {
+  background: #ffffff;
+  border: 1px solid #e5eeeb;
+  border-radius: 13px;
+  padding: 25px 28px;
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  margin-bottom: 23px;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  color: #1b312e;
+}
+
+.section-heading p {
+  margin: 0;
+  font-size: 12px;
+  color: #879591;
+}
+
+
+/* =========================================
+   FORM GRID
+   ========================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4e625e;
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  height: 43px;
+
+  border: 1px solid #dfe8e5;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  padding: 0 13px;
+
+  color: #344743;
+  font-size: 13px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #0aab80;
+  box-shadow: 0 0 0 3px rgba(10, 171, 128, 0.08);
+}
+
+.form-group input::placeholder {
+  color: #aeb9b6;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group small {
+  color: #9aa8a5;
+  font-size: 10px;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+
+/* =========================================
+   GENDER
+   ========================================= */
+
+.gender-group {
+  margin-top: 23px;
+  margin-bottom: 22px;
+}
+
+.radio-options {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #65736f !important;
+  margin: 0 !important;
+}
+
+.radio-option input {
+  width: 16px;
+  height: 16px;
+  accent-color: #08a47b;
+}
+
+
+/* =========================================
+   INPUT WITH UNIT
+   ========================================= */
+
+.input-with-unit {
+  position: relative;
+}
+
+.input-with-unit input {
+  padding-right: 55px;
+}
+
+.input-with-unit span {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: #95a29f;
+  font-size: 11px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   YES / NO BUTTONS
+   ========================================= */
+
+.yes-no-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.choice-button {
+  height: 43px;
+  min-width: 95px;
+
+  border-radius: 8px;
+  border: 1px solid #dfe8e5;
+
+  background: #ffffff;
+  color: #687773;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.choice-button:hover {
+  border-color: #09a77c;
+  color: #078f6e;
+}
+
+.choice-button.selected {
+  background: #e4f8f1;
+  border-color: #09a77c;
+  color: #078f6e;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   RESULT
+   ========================================= */
+
+.assessment-result {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: #e9f9f4;
+  border: 1px solid #c9eee3;
+
+  border-radius: 12px;
+
+  padding: 18px 22px;
+  margin-bottom: 18px;
+}
+
+.result-icon {
+  width: 42px;
+  height: 42px;
+
+  border-radius: 50%;
+
+  background: #08a77c;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 700;
+}
+
+.assessment-result h3 {
+  margin: 0 0 4px;
+  color: #14745e;
+  font-size: 15px;
+}
+
+.assessment-result p {
+  margin: 0 0 5px;
+  color: #658079;
+  font-size: 12px;
+}
+
+.assessment-result strong {
+  display: block;
+  color: #078f6e;
+  font-size: 14px;
+}
+
+.assessment-result small {
+  display: block;
+  margin-top: 5px;
+  color: #7b918a;
+  font-size: 10px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px 3px 25px;
+}
+
+.privacy-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  max-width: 500px;
+}
+
+.privacy-note span {
+  font-size: 16px;
+}
+
+.privacy-note p {
+  margin: 0;
+  color: #8b9996;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.next-button {
+  min-width: 210px;
+  height: 46px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #079d76;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  transition: 0.2s ease;
+}
+
+.next-button:hover {
+  background: #057e60;
+  transform: translateY(-1px);
+}
+
+.next-button span {
+  font-size: 17px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1000px) {
+
+  .assessment-sidebar {
+    width: 190px;
+  }
+
+  .assessment-content {
+    padding: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-illustration {
+    width: 200px;
+  }
+}
+
+
+@media (max-width: 760px) {
+
+  .assessment-sidebar {
+    width: 70px;
+    padding: 18px 8px;
+  }
+
+  .assessment-logo {
+    justify-content: center;
+    padding: 4px 0 25px;
+  }
+
+  .assessment-logo > div:last-child {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .nav-item span:last-child {
+    display: none;
+  }
+
+  .sidebar-language {
+    justify-content: center;
+    padding: 10px 0;
+  }
+
+  .sidebar-language {
+    font-size: 0;
+  }
+
+  .sidebar-language .language-arrow {
+    display: none;
+  }
+
+  .assessment-topbar {
+    padding: 0 18px;
+  }
+
+  .assessment-content {
+    padding: 15px;
+  }
+
+  .assessment-hero {
+    padding: 22px;
+  }
+
+  .hero-illustration {
+    display: none;
+  }
+
+  .form-grid,
+  .lifestyle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .step-container {
+    padding: 12px;
+  }
+
+  .step-line {
+    margin: 0 8px;
+  }
+
+  .step strong {
+    display: none;
+  }
+
+  .form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .next-button {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .assessment-sidebar {
+    display: none;
+  }
+
+  .assessment-topbar {
+    height: 60px;
+  }
+
+  .search-box {
+    width: 150px;
+  }
+
+  .assessment-hero {
+    min-height: 140px;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  .hero-text p {
+    font-size: 11px;
+  }
+
+  .form-section {
+    padding: 20px 16px;
+  }
+
+  .radio-options {
+    gap: 15px;
+  }
+}
