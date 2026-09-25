@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import "./talent_discovery.css";
 
-function TalentDiscovery({ onWorkoutPlan, onNutrition, onWellness, onProgress }) {
+function TalentDiscovery({ onWorkoutPlan, onNutrition, onWellness, onProgress, onGamification }) {
   return (
     <div className="talent-page">
 
@@ -53,13 +53,10 @@ function TalentDiscovery({ onWorkoutPlan, onNutrition, onWellness, onProgress })
             <span>Talent Discovery</span>
           </a>
 
-          <a
-            href="#"
-            className="talent-nav-item"
-          >
+          <button type="button" onClick={onGamification} className="talent-nav-item">
             <span className="talent-nav-icon">✧</span>
             <span>Gamification</span>
-          </a>
+          </button>
 
         </nav>
 

@@ -79,7 +79,7 @@ function MealCard({ meal }) {
   );
 }
 
-export default function Nutrition({ onWorkoutPlan, onWellness, onProgress, onTalent }) {
+export default function Nutrition({ onWorkoutPlan, onWellness, onProgress, onTalent, onGamification }) {
   const [activeTab, setActiveTab] = useState("Today's Plan");
 
   return (
@@ -114,7 +114,7 @@ export default function Nutrition({ onWorkoutPlan, onWellness, onProgress, onTal
 
           <SidebarItem icon="✦" text="Talent Discovery" onClick={onTalent} />
 
-          <SidebarItem icon="♛" text="Gamification" />
+          <SidebarItem icon="♛" text="Gamification" onClick={onGamification} />
 
         </nav>
 

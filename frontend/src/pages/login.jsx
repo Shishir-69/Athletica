@@ -35,7 +35,7 @@ export default function Login({ onLogin }) {
       setFeedback('Please choose your role before signing in.')
       return
     }
-    onLogin()
+    onLogin(role)
   }
 
   return <main className="login-page">
